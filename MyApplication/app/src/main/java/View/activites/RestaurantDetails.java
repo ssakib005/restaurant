@@ -17,6 +17,7 @@ import database.CategoryList;
 import database.RestaurantService;
 import models.Restaurant;
 import models.RestaurantCategory;
+import models.RestaurantProduct;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +62,7 @@ public class RestaurantDetails extends AppCompatActivity implements HomeFragment
         for (RestaurantCategory category: categoryList.getByRestaurantId(id)){
 
             myFragmentTitleList.add(category.getName());
-            myFragmentList.add(new HomeFragment());
+            myFragmentList.add(new HomeFragment(categoryList.getProductList(id, category.getId())));
 
         }
 

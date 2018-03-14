@@ -1,5 +1,6 @@
 package View.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     RecyclerView recyclerView;
-    private RestaurantService service = new RestaurantService();
+    private List<RestaurantProduct> products;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -36,12 +37,16 @@ public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    private CategoryList categoryList = new CategoryList();
-
 
     public HomeFragment() {
 
     }
+
+    @SuppressLint("ValidFragment")
+    public HomeFragment(List<RestaurantProduct> products) {
+        this.products = products;
+    }
+
     // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
@@ -69,13 +74,11 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-
-
-
-        //LinearLayoutManager manager = new LinearLayoutManager(this.getContext());
-        //recyclerView.setLayoutManager(manager);
-        //recyclerView.setHasFixedSize(true);
-        //recyclerView.setAdapter(new RecyclerProductAdapter(this.getContext(), products));
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView_id);
+        LinearLayoutManager manager = new LinearLayoutManager(this.getContext());
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new RecyclerProductAdapter(this.getContext(), products));
 
         return view;
     }

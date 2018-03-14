@@ -62,16 +62,16 @@ public class CategoryList {
             new RestaurantCategory(1, "Fast Food", "Unhygienic Food", 1, productList, R.drawable.restaurant1),
             new RestaurantCategory(2, "Chinese f", "Unhygienic Food", 2, productList, R.drawable.restaurant2),
             new RestaurantCategory(3, "Pizzassss", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "Pifdzdfss", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "Pizdfdfss", "Unhygienic Food", 3, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "Pizzdffds", "Unhygienic Food", 5, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "Pisfdfdff", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "sdfsdfsff", "Unhygienic Food", 2, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "sdfsdfdsf", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "fghnfhddd", "Unhygienic Food", 3, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "fhfghfdgf", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "fghgfhffd", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
-            new RestaurantCategory(3, "rtyrghfdd", "Unhygienic Food", 1, productList, R.drawable.restaurant3)
+            new RestaurantCategory(4, "Pifdzdfss", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
+            new RestaurantCategory(5, "Pizdfdfss", "Unhygienic Food", 3, productList, R.drawable.restaurant3),
+            new RestaurantCategory(6, "Pizzdffds", "Unhygienic Food", 5, productList, R.drawable.restaurant3),
+            new RestaurantCategory(7, "Pisfdfdff", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
+            new RestaurantCategory(8, "sdfsdfsff", "Unhygienic Food", 2, productList, R.drawable.restaurant3),
+            new RestaurantCategory(9, "sdfsdfdsf", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
+            new RestaurantCategory(10, "fghnfhddd", "Unhygienic Food", 3, productList, R.drawable.restaurant3),
+            new RestaurantCategory(11, "fhfghfdgf", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
+            new RestaurantCategory(12, "fghgfhffd", "Unhygienic Food", 1, productList, R.drawable.restaurant3),
+            new RestaurantCategory(13, "rtyrghfdd", "Unhygienic Food", 1, productList, R.drawable.restaurant3)
     );
 
 

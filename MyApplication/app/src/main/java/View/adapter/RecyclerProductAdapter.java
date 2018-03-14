@@ -38,6 +38,7 @@ public class RecyclerProductAdapter extends RecyclerView.Adapter<RestaurantProdu
         final RestaurantProduct product = restaurantProducts.get(position);
 
         holder.id.setText(String.valueOf(product.getId()));
+        holder.iv.setImageResource(product.getImage());
         holder.nameTv.setText(product.getName());
         holder.priceTv.setText(String.valueOf(product.getPrice()));
         holder.totalQtyTv.setText(String.valueOf(product.getQuantity()));
@@ -47,7 +48,7 @@ public class RecyclerProductAdapter extends RecyclerView.Adapter<RestaurantProdu
             @Override
             public void onClick(View view) {
                 holder.userQtyTv.setVisibility(View.VISIBLE);
-                holder.userQtyTv.setText(String.valueOf(counter++));
+                holder.userQtyTv.setText(String.valueOf(++counter));
             }
         });
     }
