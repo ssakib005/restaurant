@@ -27,8 +27,8 @@ public class RestaurantDetails extends AppCompatActivity implements HomeFragment
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private static List<Fragment> myFragmentList = new ArrayList<>();
-    private static List<String> myFragmentTitleList = new ArrayList<>();
+    private final List<Fragment> myFragmentList = new ArrayList<>();
+    private final List<String> myFragmentTitleList = new ArrayList<>();
     private static List<String> categoryId  = new ArrayList<>();
 
     private static final RestaurantService service = new RestaurantService();
@@ -41,13 +41,14 @@ public class RestaurantDetails extends AppCompatActivity implements HomeFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_details);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbarAction);
-        setSupportActionBar(toolbar);
-
-        int id = getIntent().getExtras().getInt("id");
+        ImageView iv = (ImageView) findViewById(R.id.restaurantImageId); // For display restaurant image
         viewPager = (ViewPager) findViewById(R.id.restaurantPagerView);
         tabLayout = (TabLayout) findViewById(R.id.restaurantCategoryTabView);
-        ImageView iv = (ImageView) findViewById(R.id.restaurantImageId);
+        toolbar = (Toolbar) findViewById(R.id.toolbarAction); // For enable toolbar
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        int id = getIntent().getExtras().getInt("id"); // get Restaurant Id
 
         for (Restaurant res: service.getRestaurantService()){
             if (res.getId() == id){
@@ -55,33 +56,22 @@ public class RestaurantDetails extends AppCompatActivity implements HomeFragment
             }
         }
 
+
+
         for (RestaurantCategory category: categoryList.getByRestaurantId(id)){
-            tabLayout.addTab(tabLayout.newTab().setText(category.getName()));
+
             myFragmentTitleList.add(category.getName());
             myFragmentList.add(new HomeFragment());
 
         }
-        RestaurantDetailsAdapter adapter = new RestaurantDetailsAdapter(this.getSupportFragmentManager(), myFragmentList, myFragmentTitleList);
-        viewPager.setOffscreenPageLimit(0);
+
+        final RestaurantDetailsAdapter adapter = new RestaurantDetailsAdapter(getSupportFragmentManager(), myFragmentList, myFragmentTitleList);
         viewPager.setAdapter(adapter);
 
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        tabLayout.setupWithViewPager(viewPager);
+        viewPager.setOffscreenPageLimit(myFragmentList.size());
+        tabLayout.setTabsFromPagerAdapter(adapter);
     }
 
     @Override

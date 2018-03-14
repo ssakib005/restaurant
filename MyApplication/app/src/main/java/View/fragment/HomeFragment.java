@@ -69,21 +69,13 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        List<RestaurantProduct> products = new ArrayList<RestaurantProduct>();
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView_id);
-
-        TextView txt = (TextView) view.findViewById(R.id.restaurantId);
-        //int resId = Integer.valueOf(txt.getText().toString());
-
-        //for (RestaurantProduct pro: categoryList.getProductList(resId, ))
 
 
 
-        LinearLayoutManager manager = new LinearLayoutManager(this.getContext());
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new RecyclerProductAdapter(this.getContext(), products));
+        //LinearLayoutManager manager = new LinearLayoutManager(this.getContext());
+        //recyclerView.setLayoutManager(manager);
+        //recyclerView.setHasFixedSize(true);
+        //recyclerView.setAdapter(new RecyclerProductAdapter(this.getContext(), products));
 
         return view;
     }
