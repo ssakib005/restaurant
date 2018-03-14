@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title=""
+        android:id="@+id/search_id"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title=""
+        android:id="@+id/cart_id"
+        android:icon="@drawable/ic_add_shopping_cart_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="@string/log_in"
+        android:id="@+id/user_login"
+        android:icon="@drawable/ic_exit_to_app_white_24dp"/>
+</menu>
